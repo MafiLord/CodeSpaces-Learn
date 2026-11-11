@@ -1,0 +1,7 @@
+TEST-ТЕСТ = тестовый фалй для обучения облачным технологиям с использованием Codespaces / GitHUB
+команды Linux:
+mkdir -p notes
+cd notes
+printf "Codespaces: облачная среда разработки\n" > info.txt
+cat info.txt
+cd ..
