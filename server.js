@@ -35,9 +35,19 @@ app.get("/api/services", (req, res) => {
   res.json(services);
 });
 
+app.get("/api/services/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const item = services.find(s => s.id === id);
+  if (!item) {
+    return res.status(404).json({ error: "Сервис не найден" });
+  }
+  res.json(item);
+});
+
+
 app.get("/api/hello", (req, res) => {
     const name = req.query.name;
-  res.json(`Hello ${name}`);
+  res.send(`Hello ${name}`);
 });
  
 app.listen(port, "0.0.0.0", () => {
